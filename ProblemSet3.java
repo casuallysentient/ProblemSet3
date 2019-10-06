@@ -115,41 +115,41 @@ public class ProblemSet3 {
     double dGrade = 1.00;
     double fGrade = 0.00;
     double pointDifference = 0.33;
-    String plusMinus1 = "";
-    double gpa1 = 0.00;
+    String plusMinus = "";
+    double gpa = 0.00;
 
     System.out.print("\nEnter a letter grade: ");
     in.nextLine();
     String letterGrade1 = in.nextLine();
     letterGrade1 = letterGrade1.trim();
-    String firstLetter1 = letterGrade1.substring(0, 1).toUpperCase();
+    String firstLetter = letterGrade1.substring(0, 1).toUpperCase();
     if(letterGrade1.length() == 2) {
-      plusMinus1 = letterGrade1.substring(1, 2);
+      plusMinus = letterGrade1.substring(1, 2);
     }
-    if(letterGrade1.length() <= 2 && letterGrade1.length() > 0 && (firstLetter1.equals("A") || firstLetter1.equals("B") || firstLetter1.equals("C") || firstLetter1.equals("D") || firstLetter1.equals("F")) && (plusMinus1.equals("") || plusMinus1.equals("+") || plusMinus1.equals("-"))) {
-      if(plusMinus1.equals("+")) {
-        gpa1 += pointDifference;
-      } else if(plusMinus1.equals("-")) {
-        gpa1 -= pointDifference;
+    if(letterGrade1.length() <= 2 && letterGrade1.length() > 0 && (firstLetter.equals("A") || firstLetter.equals("B") || firstLetter.equals("C") || firstLetter.equals("D") || firstLetter.equals("F")) && (plusMinus.equals("") || plusMinus.equals("+") || plusMinus.equals("-"))) {
+      if(plusMinus.equals("+")) {
+        gpa += pointDifference;
+      } else if(plusMinus.equals("-")) {
+        gpa -= pointDifference;
       }
-      if(firstLetter1.equals("A")) {
-        gpa1 += aGrade;
-        if(gpa1 > 0) {
-          gpa1 -= pointDifference;
+      if(firstLetter.equals("A")) {
+        gpa += aGrade;
+        if(gpa > 0) {
+          gpa -= pointDifference;
         }
-      } else if(firstLetter1.equals("B")) {
-        gpa1 += bGrade;
-      } else if(firstLetter1.equals("C")) {
-        gpa1 += cGrade;
-      } else if(firstLetter1.equals("D")) {
-        gpa1 += dGrade;
-      } else if(firstLetter1.equals("F")) {
-        gpa1 += fGrade;
-        if(gpa1 < 0) {
-          gpa1 += pointDifference;
+      } else if(firstLetter.equals("B")) {
+        gpa += bGrade;
+      } else if(firstLetter.equals("C")) {
+        gpa += cGrade;
+      } else if(firstLetter.equals("D")) {
+        gpa += dGrade;
+      } else if(firstLetter.equals("F")) {
+        gpa += fGrade;
+        if(gpa < 0) {
+          gpa += pointDifference;
         }
       }
-      System.out.printf("\nYour GPA is %.2f.", gpa1);
+      System.out.printf("\nYour GPA is %.2f.\n", gpa);
     } else {
       System.out.println("\nThat's not a valid letter grade.");
     }
@@ -162,7 +162,34 @@ public class ProblemSet3 {
   */
 
   public void grade() {
+    System.out.print("\nEnter a grade: ");
+    double numberGrade = in.nextDouble();
+    char letterGrade2 = 'X';
+    String grammar = "";
 
+    if(numberGrade >= 0 && numberGrade <= 100) {
+      if(numberGrade >= 90 && numberGrade <= 100) {
+        letterGrade2 = 'A';
+        grammar = "an";
+      } else if(numberGrade >= 80 && numberGrade <= 89) {
+        letterGrade2 = 'B';
+        grammar = "a";
+      } else if(numberGrade >= 70 && numberGrade <= 79) {
+        letterGrade2 = 'C';
+        grammar = "a";
+      } else if(numberGrade >= 60 && numberGrade <= 69) {
+        letterGrade2 = 'D';
+        grammar = "a";
+      } else if(numberGrade >= 0 && numberGrade <= 59) {
+        letterGrade2 = 'F';
+        grammar = "an";
+      }
+      System.out.printf("\nYou received " + grammar + " " + letterGrade2 +  ".");
+    } else if(numberGrade < 0) {
+      System.out.println("\nGrades below 0 are invalid.");
+    } else if(numberGrade > 100) {
+      System.out.println("\nGrades above 100 are invalid.");
+    }
   }
 
   /*
