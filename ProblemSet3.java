@@ -79,7 +79,27 @@ public class ProblemSet3 {
   */
 
   public void ordered() {
+    System.out.println("\nEnter three integers.");
+    System.out.print("\nEnter an integer: ");
+    int ordInteger1 = in.nextInt();
+    System.out.print("Enter an integer: ");
+    int ordInteger2 = in.nextInt();
+    System.out.print("Enter an integer: ");
+    int ordInteger3 = in.nextInt();
 
+    if(ordInteger1 < ordInteger2 && ordInteger2 < ordInteger3) {
+      System.out.println("\nStrictly increasing.");
+    } else if(ordInteger1 <= ordInteger2 && ordInteger2 <= ordInteger3) {
+      System.out.println("\nIncreasing.");
+    } else if(ordInteger1 == ordInteger2 && ordInteger2 == ordInteger3) {
+      System.out.println("\nSame.");
+    } else if(ordInteger1 >= ordInteger2 && ordInteger2 >= ordInteger3) {
+      System.out.println("\nDecreasing.");
+    } else if(ordInteger1 > ordInteger2 && ordInteger2 > ordInteger3) {
+      System.out.println("\nStrictly decreasing.");
+    } else {
+      System.out.println("\nUnordered.");
+    }
   }
 
   /*
