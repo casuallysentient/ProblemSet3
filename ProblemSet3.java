@@ -290,22 +290,26 @@ public class ProblemSet3 {
     String scale = in.nextLine();
     scale = scale.toUpperCase();
     String state = "";
+    int fahrenheitFreezingPoint = 32;
+    int fahrenheitBoilingPoint = 212;
+    int celsiusFreezingPoint = 0;
+    int celsiusBoilingPoint = 100;
 
     if (scale.equals("F") || scale.equals("C")) {
       if (scale.equals("F")) {
-        if (temperature <= 32) {
+        if (temperature <= fahrenheitFreezingPoint) {
           state = "Solid.";
-        } else if (temperature > 32 && temperature < 212) {
+        } else if (temperature > fahrenheitFreezingPoint && temperature < fahrenheitBoilingPoint) {
           state = "Liquid.";
-        } else if (temperature >= 212) {
+        } else if (temperature >= fahrenheitBoilingPoint) {
           state = "Gas.";
         }
       } else if (scale.equals("C")) {
-        if (temperature <= 0) {
+        if (temperature <= celsiusFreezingPoint) {
           state = "Solid.";
-        } else if (temperature > 0 && temperature < 100) {
+        } else if (temperature > celsiusFreezingPoint && temperature < celsiusBoilingPoint) {
           state = "Liquid.";
-        } else if (temperature >= 100) {
+        } else if (temperature >= celsiusBoilingPoint) {
           state = "Gas.";
         }
       }
@@ -362,6 +366,28 @@ public class ProblemSet3 {
   */
 
   public void salary() {
+    System.out.print("\nWage: ");
+    double wage = in.nextDouble();
+    System.out.print("Hours: ");
+    double hours = in.nextDouble();
+    double overtimeWage = 1.5 * wage;
+    double overtime = 0;
 
+    if (wage >= 0 && hours >= 0) {
+      if (hours > 40) {
+        double overtimeHours = hours - 40;
+        hours = 40;
+        overtime = overtimeHours * overtimeWage;
+      }
+      double salary = wage * hours;
+      salary += overtime;
+      System.out.printf("\nYou'll make $%,.2f this week.\n", salary);
+    } else if (wage < 0 && hours < 0) {
+      System.out.println("\nYour wage must be greater than or equal to $0.00/hour and your hours must be greater than or equal to 0.0.");
+    } else if (wage < 0) {
+      System.out.println("\nYour wage must be greater than or equal to $0.00/hour.");
+    } else if (hours < 0) {
+      System.out.println("\nYour hours must be greater than or equal to 0.0.");
+    }
   }
 }
