@@ -184,7 +184,7 @@ public class ProblemSet3 {
         letterGrade2 = 'F';
         grammar = "an";
       }
-      System.out.printf("\nYou received " + grammar + " " + letterGrade2 +  ".");
+      System.out.printf("\nYou received " + grammar + " " + letterGrade2 +  ".\n");
     } else if(numberGrade < 0) {
       System.out.println("\nGrades below 0 are invalid.");
     } else if(numberGrade > 100) {
@@ -199,7 +199,61 @@ public class ProblemSet3 {
   */
 
   public void cards() {
+    System.out.print("\nEnter a card: ");
+    in.nextLine();
+    String card = in.nextLine();
+    String rank = card.substring(0, 1).toUpperCase();
+    String suit = card.substring(1, 2).toUpperCase();
+    String fullRank = "";
+    String fullSuit = "";
 
+    if(card.length() == 2 && (rank.equals("2") || rank.equals("3") || rank.equals("4") || rank.equals("5") || rank.equals("6") || rank.equals("7") || rank.equals("8") || rank.equals("9") || rank.equals("T") || rank.equals("J") || rank.equals("Q") || rank.equals("K") || rank.equals("A")) && (suit.equals("C") || suit.equals("H") || suit.equals("D") || suit.equals("S"))) {
+      if (rank.equals("2")) {
+        fullRank = "Two";
+      } else if (rank.equals("3")) {
+        fullRank = "Three";
+      } else if (rank.equals("4")) {
+        fullRank = "Four";
+      } else if (rank.equals("5")) {
+        fullRank = "Five";
+      } else if (rank.equals("6")) {
+        fullRank = "Six";
+      } else if (rank.equals("7")) {
+        fullRank = "Seven";
+      } else if (rank.equals("8")) {
+        fullRank = "Eight";
+      } else if (rank.equals("9")) {
+        fullRank = "Nine";
+      } else if (rank.equals("T")) {
+        fullRank = "Ten";
+      } else if (rank.equals("J")) {
+        fullRank = "Jack";
+      } else if (rank.equals("Q")) {
+        fullRank = "Queen";
+      } else if (rank.equals("K")) {
+        fullRank = "King";
+      } else if (rank.equals("A")) {
+        fullRank = "Ace";
+      }
+      if (suit.equals("C")) {
+        fullSuit = "Clubs";
+      } else if (suit.equals("D")) {
+        fullSuit = "Diamonds";
+      } else if (suit.equals("H")) {
+        fullSuit = "Hearts";
+      } else if (suit.equals("S")) {
+        fullSuit = "Spades";
+      }
+      System.out.println("\n" + fullRank + " of " + fullSuit + ".");
+    } else if(card.length() != 2) {
+      System.out.println("\nThat's not a valid card.");
+    } else if(!(rank.equals("2") || rank.equals("3") || rank.equals("4") || rank.equals("5") || rank.equals("6") || rank.equals("7") || rank.equals("8") || rank.equals("9") || rank.equals("T") || rank.equals("J") || rank.equals("Q") || rank.equals("K") || rank.equals("A")) && !(suit.equals("C") || suit.equals("H") || suit.equals("D") || suit.equals("S"))) {
+      System.out.println("\nThat's not a valid rank or a valid suit.");
+    } else if(!(rank.equals("2") || rank.equals("3") || rank.equals("4") || rank.equals("5") || rank.equals("6") || rank.equals("7") || rank.equals("8") || rank.equals("9") || rank.equals("T") || rank.equals("J") || rank.equals("Q") || rank.equals("K") || rank.equals("A"))) {
+      System.out.println("\nThat's not a valid rank.");
+    } else if(!(suit.equals("C") || suit.equals("H") || suit.equals("D") || suit.equals("S"))) {
+      System.out.println("\nThat's not a valid suit.");
+    }
   }
 
   /*
