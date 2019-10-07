@@ -370,7 +370,8 @@ public class ProblemSet3 {
     double wage = in.nextDouble();
     System.out.print("Hours: ");
     double hours = in.nextDouble();
-    double overtimeWage = 1.5 * wage;
+    double payMultiplier = 1.5;
+    double overtimeWage = payMultiplier * wage;
     double overtime = 0;
 
     if (wage >= 0 && hours >= 0) {
