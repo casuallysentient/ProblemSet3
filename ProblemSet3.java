@@ -93,10 +93,10 @@ public class ProblemSet3 {
         System.out.println("\nStrictly increasing.");
     } else if(ordInteger1 <= ordInteger2 && ordInteger2 <= ordInteger3) {
         System.out.println("\nIncreasing.");
-    } else if(ordInteger1 >= ordInteger2 && ordInteger2 >= ordInteger3) {
-      System.out.println("\nDecreasing.");
     } else if(ordInteger1 > ordInteger2 && ordInteger2 > ordInteger3) {
       System.out.println("\nStrictly decreasing.");
+    } else if(ordInteger1 >= ordInteger2 && ordInteger2 >= ordInteger3) {
+      System.out.println("\nDecreasing.");
     } else {
       System.out.println("\nUnordered.");
     }
