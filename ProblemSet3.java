@@ -322,7 +322,37 @@ public class ProblemSet3 {
   */
 
   public void months() {
+    System.out.print("\nEnter a month: ");
+    String month = in.nextLine();
+    month = month.toLowerCase();
 
+    if (month.equals("jan") || month.equals("janu") || month.equals("january")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("feb") || month.equals("febr") || month.equals("february")) {
+      System.out.println("\n28 or 29 days.");
+    } else if (month.equals("mar") || month.equals("marc") || month.equals("march")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("apr") || month.equals("apri") || month.equals("april")) {
+      System.out.println("\n30 days.");
+    } else if (month.equals("may")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("jun") || month.equals("june")) {
+      System.out.println("\n30 days.");
+    } else if (month.equals("jul") || month.equals("july")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("aug") || month.equals("augu") || month.equals("august")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("sep") || month.equals("sept") || month.equals("september")) {
+      System.out.println("\n30 days.");
+    } else if (month.equals("oct") || month.equals("octo") || month.equals("october")) {
+      System.out.println("\n31 days.");
+    } else if (month.equals("nov") || month.equals("nove") || month.equals("november")) {
+      System.out.println("\n30 days.");
+    } else if (month.equals("dec") || month.equals("dece") || month.equals("december")) {
+      System.out.println("\n31 days.");
+    } else {
+      System.out.println("\nThat's not a valid month.");
+    }
   }
 
   /*
