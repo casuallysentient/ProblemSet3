@@ -166,28 +166,38 @@ public class ProblemSet3 {
     double numberGrade = in.nextDouble();
     char letterGrade2 = 'X';
     String grammar = "";
+    int highA = 100;
+    int lowA = 90;
+    int highB = 89;
+    int lowB = 80;
+    int highC = 79;
+    int lowC = 70;
+    int highD = 69;
+    int lowD = 60;
+    int highF = 59;
+    int lowF = 0;
 
-    if(numberGrade >= 0 && numberGrade <= 100) {
-      if(numberGrade >= 90 && numberGrade <= 100) {
+    if(numberGrade >= lowF && numberGrade <= highA) {
+      if(numberGrade >= lowA && numberGrade <= highA) {
         letterGrade2 = 'A';
         grammar = "an";
-      } else if(numberGrade >= 80 && numberGrade <= 89) {
+      } else if(numberGrade >= lowB && numberGrade <= highB) {
         letterGrade2 = 'B';
         grammar = "a";
-      } else if(numberGrade >= 70 && numberGrade <= 79) {
+      } else if(numberGrade >= lowC && numberGrade <= highC) {
         letterGrade2 = 'C';
         grammar = "a";
-      } else if(numberGrade >= 60 && numberGrade <= 69) {
+      } else if(numberGrade >= lowD && numberGrade <= highD) {
         letterGrade2 = 'D';
         grammar = "a";
-      } else if(numberGrade >= 0 && numberGrade <= 59) {
+      } else if(numberGrade >= lowF && numberGrade <= highF) {
         letterGrade2 = 'F';
         grammar = "an";
       }
       System.out.printf("\nYou received " + grammar + " " + letterGrade2 +  ".\n");
-    } else if(numberGrade < 0) {
+    } else if(numberGrade < lowF) {
       System.out.println("\nGrades below 0 are invalid.");
-    } else if(numberGrade > 100) {
+    } else if(numberGrade > highA) {
       System.out.println("\nGrades above 100 are invalid.");
     }
   }
