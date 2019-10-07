@@ -122,11 +122,12 @@ public class ProblemSet3 {
     in.nextLine();
     String letterGrade1 = in.nextLine();
     letterGrade1 = letterGrade1.trim();
-    String firstLetter = letterGrade1.substring(0, 1).toUpperCase();
+    letterGrade1 = letterGrade1.toUpperCase();
+    String firstLetter = letterGrade1.substring(0, 1);
     if(letterGrade1.length() == 2) {
       plusMinus = letterGrade1.substring(1, 2);
     }
-    if(letterGrade1.length() <= 2 && letterGrade1.length() > 0 && (firstLetter.equals("A") || firstLetter.equals("B") || firstLetter.equals("C") || firstLetter.equals("D") || firstLetter.equals("F")) && (plusMinus.equals("") || plusMinus.equals("+") || plusMinus.equals("-"))) {
+    if(letterGrade1.length() <= 2 && letterGrade1.length() > 0 && (firstLetter.equals("A") || firstLetter.equals("B") || firstLetter.equals("C") || firstLetter.equals("D") || firstLetter.equals("F")) && (plusMinus.equals("") || plusMinus.equals("+") || plusMinus.equals("-")) && !letterGrade1.equals("F+") && !letterGrade1.equals("F-")) {
       if(plusMinus.equals("+")) {
         gpa += pointDifference;
       } else if(plusMinus.equals("-")) {
@@ -197,7 +198,7 @@ public class ProblemSet3 {
       System.out.printf("\nYou received " + grammar + " " + letterGrade2 +  ".\n");
     } else if(numberGrade < lowF) {
       System.out.println("\nGrades below 0 are invalid.");
-    } else if(numberGrade > highA) {
+    } else if(numberGrade > 100) {
       System.out.println("\nGrades above 100 are invalid.");
     }
   }
