@@ -263,7 +263,16 @@ public class ProblemSet3 {
   */
 
   public void leapYear() {
+    System.out.print("\nEnter a year: ");
+    int potentialLeapYear = in.nextInt();
+    String isOrIsNot = "";
 
+    if (potentialLeapYear % 4 == 0 && (potentialLeapYear % 100 != 0 | potentialLeapYear % 400 == 0)) {
+      isOrIsNot = " is ";
+    } else {
+      isOrIsNot = " is not ";
+    }
+    System.out.println("\n" + potentialLeapYear + isOrIsNot + "a leap year.");
   }
 
   /*
