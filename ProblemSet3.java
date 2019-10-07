@@ -283,7 +283,36 @@ public class ProblemSet3 {
   */
 
   public void state() {
+    System.out.print("\nEnter a temperature: ");
+    double temperature = in.nextDouble();
+    System.out.print("Enter a scale: ");
+    in.nextLine();
+    String scale = in.nextLine();
+    scale = scale.toUpperCase();
+    String state = "";
 
+    if (scale.equals("F") || scale.equals("C")) {
+      if (scale.equals("F")) {
+        if (temperature <= 32) {
+          state = "Solid.";
+        } else if (temperature > 32 && temperature < 212) {
+          state = "Liquid.";
+        } else if (temperature >= 212) {
+          state = "Gas.";
+        }
+      } else if (scale.equals("C")) {
+        if (temperature <= 0) {
+          state = "Solid.";
+        } else if (temperature > 0 && temperature < 100) {
+          state = "Liquid.";
+        } else if (temperature >= 100) {
+          state = "Gas.";
+        }
+      }
+      System.out.println("\n" + state);
+    } else {
+      System.out.println("\nThat's not a valid scale.");
+    }
   }
 
   /*
